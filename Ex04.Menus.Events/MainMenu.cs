@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Events
 {
-    internal class MainMenu
+    public class MainMenu : MenuItem
     {
+        public MainMenu(string title) : base(title)
+        {
+        }
+
+        public void Show()
+        {
+            Execute();
+        }
     }
 }
