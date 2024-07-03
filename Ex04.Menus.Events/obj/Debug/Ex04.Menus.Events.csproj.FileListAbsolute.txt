@@ -1,0 +1,7 @@
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\obj\Debug\Ex04.Menus.Events.csproj.AssemblyReference.cache
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\obj\Debug\Ex04.Menus.Events.csproj.CoreCompileInputs.cache
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\bin\Debug\Ex04.Menus.Events.dll.config
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\bin\Debug\Ex04.Menus.Events.dll
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\bin\Debug\Ex04.Menus.Events.pdb
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\obj\Debug\Ex04.Menus.Events.dll
+C:\Users\oronp\source\repos\B24 Ex04 Oron 326647914 Max 345511943\Ex04.Menus.Events\obj\Debug\Ex04.Menus.Events.pdb
