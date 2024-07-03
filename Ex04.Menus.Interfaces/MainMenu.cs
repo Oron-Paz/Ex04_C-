@@ -8,7 +8,7 @@ namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
-        private IMenuItem rootItem;
+        private MenuItem rootItem;
 
         public MainMenu(string title)
         {
@@ -17,18 +17,18 @@ namespace Ex04.Menus.Interfaces
 
         public void AddMenuItem(string title)
         {
-            rootItem.AddSubItem(new MenuItem(title));
+            rootItem.SubItems.Add(new MenuItem(title));
         }
 
         public void AddSubMenuItem(List<string> path, string title)
         {
-            IMenuItem currentItem = rootItem;
+            MenuItem currentItem = rootItem;
             foreach (var itemTitle in path)
             {
-                currentItem = currentItem.GetSubItems().FirstOrDefault(item => item.Title == itemTitle);
+                currentItem = (MenuItem)currentItem.SubItems.Find(item => item.Title == itemTitle);
                 if (currentItem == null) return;
             }
-            currentItem.AddSubItem(new MenuItem(title));
+            currentItem.SubItems.Add(new MenuItem(title));
         }
 
         public void Show()
@@ -44,10 +44,9 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(menuItem.Title);
                 Console.WriteLine(new string('=', menuItem.Title.Length));
 
-                var subItems = menuItem.GetSubItems().ToList();
-                for (int i = 0; i < subItems.Count; i++)
+                for (int i = 0; i < menuItem.SubItems.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {subItems[i].Title}");
+                    Console.WriteLine($"{i + 1}. {menuItem.SubItems[i].Title}");
                 }
 
                 Console.WriteLine(menuItem == rootItem ? "0. Exit" : "0. Back");
@@ -60,10 +59,10 @@ namespace Ex04.Menus.Interfaces
                         if (menuItem == rootItem) return;
                         else break;
                     }
-                    else if (choice > 0 && choice <= subItems.Count)
+                    else if (choice > 0 && choice <= menuItem.SubItems.Count)
                     {
-                        var selectedItem = subItems[choice - 1];
-                        if (selectedItem.GetSubItems().Any())
+                        var selectedItem = menuItem.SubItems[choice - 1];
+                        if (selectedItem.SubItems.Count > 0)
                         {
                             ShowMenu(selectedItem);
                         }

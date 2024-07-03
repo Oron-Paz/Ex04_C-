@@ -9,7 +9,6 @@ namespace Ex04.Menus.Interfaces
     public interface IMenuItem
     {
         string Title { get; }
-        IEnumerable<IMenuItem> GetSubItems();
-        void AddSubItem(IMenuItem subItem);
+        List<IMenuItem> SubItems { get; }
     }
 }
