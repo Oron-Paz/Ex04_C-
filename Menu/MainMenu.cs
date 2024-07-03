@@ -8,5 +8,6 @@ namespace Menu
 {
     internal class MainMenu
     {
+
     }
 }
