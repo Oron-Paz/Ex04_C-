@@ -6,55 +6,75 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class MenuItem : IMenuItem
+    public class MainMenu
     {
-        public string Title { get; }
-        public List<IMenuItem> SubItems { get; }
+        private IMenuItem rootItem;
 
-        public MenuItem(string title)
+        public MainMenu(string title)
         {
-            Title = title;
-            SubItems = new List<IMenuItem>();
+            rootItem = new MenuItem(title);
         }
 
-        public void AddSubItem(IMenuItem item)
+        public void AddMenuItem(string title)
         {
-            SubItems.Add(item);
+            rootItem.AddSubItem(new MenuItem(title));
         }
 
-        public virtual void Execute()
+        public void AddSubMenuItem(List<string> path, string title)
         {
-            if (SubItems.Count > 0)
+            IMenuItem currentItem = rootItem;
+            foreach (var itemTitle in path)
             {
-                ShowSubMenu();
+                currentItem = currentItem.GetSubItems().FirstOrDefault(item => item.Title == itemTitle);
+                if (currentItem == null) return;
             }
-            else
-            {
-                Console.WriteLine("No action defined.");
-            }
+            currentItem.AddSubItem(new MenuItem(title));
         }
 
-        protected void ShowSubMenu()
+        public void Show()
+        {
+            ShowMenu(rootItem);
+        }
+
+        private void ShowMenu(IMenuItem menuItem)
         {
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine(Title);
-                Console.WriteLine(new string('=', Title.Length));
-                for (int i = 0; i < SubItems.Count; i++)
+                Console.WriteLine(menuItem.Title);
+                Console.WriteLine(new string('=', menuItem.Title.Length));
+
+                var subItems = menuItem.GetSubItems().ToList();
+                for (int i = 0; i < subItems.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {SubItems[i].Title}");
+                    Console.WriteLine($"{i + 1}. {subItems[i].Title}");
                 }
-                Console.WriteLine("0. Back");
+
+                Console.WriteLine(menuItem == rootItem ? "0. Exit" : "0. Back");
                 Console.Write("Please enter your choice: ");
-                if (int.TryParse(Console.ReadLine(), out int choice) && choice >= 0 && choice <= SubItems.Count)
+
+                if (int.TryParse(Console.ReadLine(), out int choice))
                 {
-                    if (choice == 0) return;
-                    SubItems[choice - 1].Execute();
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice, please try again.");
+                    if (choice == 0)
+                    {
+                        if (menuItem == rootItem) return;
+                        else break;
+                    }
+                    else if (choice > 0 && choice <= subItems.Count)
+                    {
+                        var selectedItem = subItems[choice - 1];
+                        if (selectedItem.GetSubItems().Any())
+                        {
+                            ShowMenu(selectedItem);
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine($"You selected: {selectedItem.Title}");
+                            Console.WriteLine("Press any key to continue...");
+                            Console.ReadKey();
+                        }
+                    }
                 }
             }
         }

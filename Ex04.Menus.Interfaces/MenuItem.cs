@@ -6,15 +6,24 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class MainMenu : MenuItem
+    public class MenuItem : IMenuItem
     {
-        public MainMenu(string title) : base(title)
+        public string Title { get; private set; }
+        private List<IMenuItem> subItems = new List<IMenuItem>();
+
+        public MenuItem(string title)
         {
+            Title = title;
         }
 
-        public void Show()
+        public IEnumerable<IMenuItem> GetSubItems()
         {
-            Execute();
+            return subItems;
+        }
+
+        public void AddSubItem(IMenuItem subItem)
+        {
+            subItems.Add(subItem);
         }
     }
 }
