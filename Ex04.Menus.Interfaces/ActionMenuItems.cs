@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    internal class ActionMenuItems
+    public class ActionMenuItem : MenuItem
     {
+        private readonly Action _action;
+
+        public ActionMenuItem(string title, Action action) : base(title)
+        {
+            _action = action;
+        }
+
+        public override void Execute()
+        {
+            _action.Invoke();
+        }
     }
 }

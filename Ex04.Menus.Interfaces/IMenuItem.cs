@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    internal interface IMenuItem
+    public interface IMenuItem
     {
+        string Title { get; }
+        void Execute();
     }
 }
