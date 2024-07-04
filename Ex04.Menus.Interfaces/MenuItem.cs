@@ -9,13 +9,13 @@ namespace Ex04.Menus.Interfaces
     public class MenuItem : IMenuItem
     {
         public string m_Title { get; }
-        public List<MenuItem> m_SubItems { get; }
+        public List<IMenuItem> m_SubItems { get; }
 
 
         public MenuItem(string i_Title)
         {
             m_Title = i_Title;
-            m_SubItems = new List<MenuItem>();
+            m_SubItems = new List<IMenuItem>();
 
         }
 
@@ -56,10 +56,9 @@ namespace Ex04.Menus.Interfaces
             }
 
         }
-        public void addSubItem(MenuItem i_SubItem)
+        public void addSubItem(IMenuItem i_SubItem)
         {
             m_SubItems.Add(i_SubItem);
         }
-        
     }
 }

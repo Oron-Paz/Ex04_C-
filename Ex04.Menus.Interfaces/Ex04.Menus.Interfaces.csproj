@@ -42,7 +42,7 @@
     <Compile Include="IMenuItem.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MenuItem.cs" />
-    <Compile Include="OperationItem.cs" />
+    <Compile Include="Operations.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

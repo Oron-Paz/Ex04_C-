@@ -11,7 +11,7 @@ namespace Ex04.Menus.Test
         internal static void showVersion()
         {
             Console.Clear();
-            Console.WriteLine("Version: 21.1.4.8930");
+            Console.WriteLine("Version: 24.2.4.9504");
             Console.ReadLine();
         }
 

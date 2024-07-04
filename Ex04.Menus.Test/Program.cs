@@ -20,13 +20,13 @@ namespace Ex04.Menus.Test
             var mainMenu = new Ex04.Menus.Interfaces.MainMenu("Main Menu");
 
             var versionMenu = new Ex04.Menus.Interfaces.MenuItem("Version and Capitals");
-            versionMenu.addSubItem(new Ex04.Menus.Interfaces.OperationItem("Show Version", Actions.showVersion));
-            versionMenu.addSubItem(new Ex04.Menus.Interfaces.OperationItem("Count Capitals", Actions.countCapitals));
+            versionMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showVersion("Show Version"));
+            versionMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.countCapitals("Count Capitals"));
             mainMenu.addSubItem(versionMenu);
 
             var timeAndDateMenu = new Ex04.Menus.Interfaces.MenuItem("Show Time/Date");
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.OperationItem("Show Time", Actions.showTime));
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.OperationItem("Show Date", Actions.showDate));
+            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showTimeOperation("Show Time"));
+            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showDateOperation("Show Date"));
             mainMenu.addSubItem(timeAndDateMenu);
 
             mainMenu.Show();
