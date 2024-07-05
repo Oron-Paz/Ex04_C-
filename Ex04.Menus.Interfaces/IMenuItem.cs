@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public interface IMenuItem
+    public interface IMenuItem //interface for menu item that requires both a title and a function to perform once selected
     {
         string m_Title { get; }
 

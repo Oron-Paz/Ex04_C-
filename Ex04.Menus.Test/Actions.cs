@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Test
 {
-    internal class Actions //or Operations
+    internal class Actions // function calls used for delegate version of the menu
     {
         internal static void ShowVersion()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Test
 {
-    internal class Operations
+    internal class Operations //operations used for the interface version of the menu 
     {
         public class ShowTimeOperation : IMenuItem
         {

@@ -21,7 +21,7 @@ namespace Ex04.Menus.Interfaces
 
         public virtual void OnSelected()
         {
-            if(m_SubItems.Count > 0)
+            if(m_SubItems.Count > 0) //if the Item has sub items, show the sub menu now
             {
                 ShowSubMenu();
             }

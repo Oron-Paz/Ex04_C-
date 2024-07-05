@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class MainMenu : MenuItem
+    public class MainMenu : MenuItem 
     {
-        //Main Menu 
+         
         public MainMenu(string i_Title) : base(i_Title)
         {
-           
+            //main menu is essentially a menu item with no "parent"
         }
 
-        public void Show()
+        public void Show() //call to display the menu starting with the root menu
         {
-           OnSelected();
+           OnSelected(); 
         }
 
     }

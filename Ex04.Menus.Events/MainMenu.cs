@@ -10,7 +10,7 @@ namespace Ex04.Menus.Events
     { 
        public MainMenu(string i_title) : base(i_title)
         {
-            
+            //root menu has no parent
         }
 
         public void Show()
