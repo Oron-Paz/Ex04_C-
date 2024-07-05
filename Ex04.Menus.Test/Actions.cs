@@ -8,14 +8,14 @@ namespace Ex04.Menus.Test
 {
     internal class Actions //or Operations
     {
-        internal static void showVersion()
+        internal static void ShowVersion()
         {
             Console.Clear();
             Console.WriteLine("Version: 24.2.4.9504");
             Console.ReadLine();
         }
 
-        internal static void countCapitals()
+        internal static void CountCapitals()
         {
             Console.Clear();
             Console.WriteLine("Please enter some text:");
@@ -32,14 +32,14 @@ namespace Ex04.Menus.Test
             Console.ReadLine();
         }
 
-        public static void showTime()
+        public static void ShowTime()
         {
             Console.Clear();
             Console.WriteLine(DateTime.Now.ToLongTimeString());
             Console.ReadLine();
         }
 
-        public static void showDate()
+        public static void ShowDate()
         {
             Console.Clear();
             Console.WriteLine(DateTime.Now.ToLongDateString());

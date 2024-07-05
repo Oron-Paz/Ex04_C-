@@ -39,7 +39,7 @@ namespace Ex04.Menus.Interfaces
                 Console.WriteLine(new string('=', m_Title.Length));
                 for (int i = 0; i < m_SubItems.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}, {m_SubItems[i].m_Title}");
+                    Console.WriteLine($"{i + 1}. {m_SubItems[i].m_Title}");
                 }
                 Console.WriteLine("0. Back");
                 Console.WriteLine("Please enter your choice:");
@@ -56,7 +56,7 @@ namespace Ex04.Menus.Interfaces
             }
 
         }
-        public void addSubItem(IMenuItem i_SubItem)
+        public void AddSubItem(IMenuItem i_SubItem)
         {
             m_SubItems.Add(i_SubItem);
         }

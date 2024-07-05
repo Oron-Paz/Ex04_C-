@@ -1,17 +1,18 @@
-﻿using System;
+﻿using Ex04.Menus.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ex04.Menus.Interfaces
+namespace Ex04.Menus.Test
 {
-    public class Operations
+    internal class Operations
     {
-        public class showTimeOperation : IMenuItem
-        { 
+        public class ShowTimeOperation : IMenuItem
+        {
             public string m_Title { get; }
-            public showTimeOperation(string i_Title)
+            public ShowTimeOperation(string i_Title)
             {
                 m_Title = i_Title;
             }
@@ -20,14 +21,14 @@ namespace Ex04.Menus.Interfaces
                 Console.Clear();
                 Console.WriteLine(DateTime.Now.ToString("T"));
                 Console.ReadLine();
-            }        
+            }
         }
 
-        public class showDateOperation : IMenuItem
+        public class ShowDateOperation : IMenuItem
         {
             public string m_Title { get; }
 
-            public showDateOperation(string i_Title)
+            public ShowDateOperation(string i_Title)
             {
                 m_Title = i_Title;
             }
@@ -40,11 +41,11 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        public class countCapitals : IMenuItem
+        public class CountCapitals : IMenuItem
         {
             public string m_Title { get; }
 
-            public countCapitals(string i_Title)
+            public CountCapitals(string i_Title)
             {
                 m_Title = i_Title;
             }
@@ -67,11 +68,11 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        public class showVersion : IMenuItem
+        public class ShowVersion : IMenuItem
         {
             public string m_Title { get; }
 
-            public showVersion(string i_Title)
+            public ShowVersion(string i_Title)
             {
                 m_Title = i_Title;
             }

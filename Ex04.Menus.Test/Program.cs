@@ -11,23 +11,23 @@ namespace Ex04.Menus.Test
     {
         static void Main(string[] args)
         {
-            TestInterfacesMenu();
-            TestEventsMenu();
+            TestInterfacesMenu(); //runs the interface version of the menu
+            TestEventsMenu(); //runs the actions/delegates version of the meny
         }
 
         private static void TestInterfacesMenu()
         {
-            var mainMenu = new Ex04.Menus.Interfaces.MainMenu("Main Menu");
+            Ex04.Menus.Interfaces.MainMenu mainMenu = new Ex04.Menus.Interfaces.MainMenu("Main Menu");
 
-            var versionMenu = new Ex04.Menus.Interfaces.MenuItem("Version and Capitals");
-            versionMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showVersion("Show Version"));
-            versionMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.countCapitals("Count Capitals"));
-            mainMenu.addSubItem(versionMenu);
+            Ex04.Menus.Interfaces.MenuItem versionMenu = new Ex04.Menus.Interfaces.MenuItem("Version and Capitals");
+            versionMenu.AddSubItem(new Ex04.Menus.Test.Operations.ShowVersion("Show Version"));
+            versionMenu.AddSubItem(new Ex04.Menus.Test.Operations.CountCapitals("Count Capitals"));
+            mainMenu.AddSubItem(versionMenu);
 
-            var timeAndDateMenu = new Ex04.Menus.Interfaces.MenuItem("Show Time/Date");
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showTimeOperation("Show Time"));
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Interfaces.Operations.showDateOperation("Show Date"));
-            mainMenu.addSubItem(timeAndDateMenu);
+            Ex04.Menus.Interfaces.MenuItem timeAndDateMenu = new Ex04.Menus.Interfaces.MenuItem("Show Time/Date");
+            timeAndDateMenu.AddSubItem(new Ex04.Menus.Test.Operations.ShowTimeOperation("Show Time"));
+            timeAndDateMenu.AddSubItem(new Ex04.Menus.Test.Operations.ShowDateOperation("Show Date"));
+            mainMenu.AddSubItem(timeAndDateMenu);
 
             mainMenu.Show();
 
@@ -35,16 +35,16 @@ namespace Ex04.Menus.Test
 
         private static void TestEventsMenu()
         {
-            var mainMenu = new Ex04.Menus.Events.MainMenu("Main Menu");
+            Ex04.Menus.Events.MainMenu mainMenu = new Ex04.Menus.Events.MainMenu("Main Menu");
 
-            var versionMenu = new Ex04.Menus.Events.MenuItem("Version and Capitals");
-            versionMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Version", Actions.showVersion));
-            versionMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Count Capitals", Actions.countCapitals));
+            Ex04.Menus.Events.MenuItem versionMenu = new Ex04.Menus.Events.MenuItem("Version and Capitals");
+            versionMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Version", Actions.ShowVersion));
+            versionMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Count Capitals", Actions.CountCapitals));
             mainMenu.addSubItem(versionMenu);
 
-            var timeAndDateMenu = new Ex04.Menus.Events.MenuItem("Show Time/Date");
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Time", Actions.showTime));
-            timeAndDateMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Date", Actions.showDate));
+            Ex04.Menus.Events.MenuItem timeAndDateMenu = new Ex04.Menus.Events.MenuItem("Show Time/Date");
+            timeAndDateMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Time", Actions.ShowTime));
+            timeAndDateMenu.addSubItem(new Ex04.Menus.Events.MenuItem("Show Date", Actions.ShowDate));
             mainMenu.addSubItem(timeAndDateMenu);
 
             mainMenu.Show();

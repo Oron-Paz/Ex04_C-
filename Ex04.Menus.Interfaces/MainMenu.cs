@@ -9,7 +9,7 @@ namespace Ex04.Menus.Interfaces
     public class MainMenu : MenuItem
     {
         //Main Menu 
-        public MainMenu(string i_title) : base(i_title)
+        public MainMenu(string i_Title) : base(i_Title)
         {
            
         }
